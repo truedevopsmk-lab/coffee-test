@@ -1,5 +1,5 @@
 ## 📘 Navigation Menu
-[🏠 Home](https://truedevopsmk-lab.github.io/coffee-journal/) •
+[🏠 Home](https://truedevopsmk-lab.github.io/coffee-test/) •
 
 ---
 <!-- inject-nav -->
