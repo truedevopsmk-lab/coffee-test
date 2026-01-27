@@ -1,4 +1,4 @@
-# Kava Brazil — AeroPress (Inverted)
+## Kava Brazil — AeroPress (Inverted)
 
 **Date:** 2026-01-23  
 **Coffee:** Kava Coffee — Brazil Espirito Santo  

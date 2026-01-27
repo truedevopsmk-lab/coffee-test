@@ -1,4 +1,4 @@
-# Miners Colombia — AeroPress (Inverted)
+## Miners Colombia — AeroPress (Inverted)
 
 **Date:** 2026-01-28  
 **Coffee:** Miners Prague — Colombia Franco Alexis Garzón  
