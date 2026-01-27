@@ -1,3 +1,12 @@
+---
+layout: default
+title: AeroPress Brew Log — Miners (Colombia)
+---
+
+This entry documents my AeroPress recipe and brew notes for **Miners*, a washed coffee from Colombia.
+
+---
+
 ## Miners Colombia — AeroPress (Inverted)
 
 **Date:** 2026-01-28  

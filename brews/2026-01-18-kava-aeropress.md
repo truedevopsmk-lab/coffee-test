@@ -1,3 +1,12 @@
+---
+layout: default
+title: AeroPress Brew Log — Kava Coffee — Espirito Santo (Brazil)
+---
+
+This entry documents my AeroPress recipe and brew notes for **Kava Coffee*, a Pulped Natural coffee from Brazil.
+
+---
+
 ## Kava Brazil — AeroPress (Inverted)
 
 **Date:** 2026-01-23  
