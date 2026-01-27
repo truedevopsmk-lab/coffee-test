@@ -1,4 +1,8 @@
-# AeroPress — Personal Recipes
+---
+layout: default
+title: AeroPress — Personal Recipes
+---
+
 
 ## Sweet & Balanced (Default)
 - Ratio: 1:15

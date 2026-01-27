@@ -1,4 +1,9 @@
-# Moka Pot — Personal Notes
+---
+layout: default
+title: Moka Pot — Personal Notes
+---
+
+
 
 - Medium-fine grind
 - Hot water in base

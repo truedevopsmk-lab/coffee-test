@@ -1,4 +1,7 @@
-# Dark Room Natural — Chikmagalur, India (Anaerobic Natural)
+---
+layout: default
+title: Dark Room Natural — Chikmagalur, India (Anaerobic Natural)
+---
 
 * **Roaster**: Dark Room Natural (DrN)
 * **Origin**: Chikmagalur, Karnataka, India

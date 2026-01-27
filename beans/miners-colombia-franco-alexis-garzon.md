@@ -1,4 +1,8 @@
-# Miners Prague — Colombia Franco Alexis Garzón
+---
+layout: default
+title: Miners Prague — Colombia Franco Alexis Garzón
+---
+
 
 - Origin: Colombia
 - Producer: Franco Alexis Garzón

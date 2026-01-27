@@ -1,4 +1,8 @@
-# Kava Coffee — Brazil Espirito Santo (Competition Lot)
+---
+layout: default
+title: Kava Coffee — Brazil Espirito Santo (Competition Lot)
+---
+
 
 - Origin: Brazil
 - Process: Pulped Natural
