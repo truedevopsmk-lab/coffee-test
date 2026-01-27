@@ -1,12 +1,20 @@
 ---
 layout: default
 title: Home
----
+-----------
 
 Welcome to my personal coffee brewing and tasting journal.
+This space documents my brews, beans, and experiments over time — focused on clarity, repeatability, and learning.
 
-## Recent Brews
+---
 
-- [AeroPress — ONA La Huerta](/coffee-test/brews/2026-01-27-ona-aeropress/)
-- [AeroPress — Miners Colombia](/coffee-test/brews/2026-01-23-miners-aeropress/)
-- [AeroPress — Kava Brazil](/coffee-test/brews/2026-01-18-kava-aeropress/)
+## ☕ Recent Brews
+
+<ul>
+{% assign brews = site.pages
+  | where_exp: "p", "p.path contains 'brews/'"
+  | where_exp: "p", "p.name != 'index.md'"
+  | sort: "date"
+  | reverse %}
+{% for brew in brews limit:3 %}
+  <li>
