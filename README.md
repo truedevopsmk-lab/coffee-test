@@ -1,8 +1,3 @@
-## 📘 Navigation Menu
-[🏠 Home](https://truedevopsmk-lab.github.io/coffee-test/) •
-
----
-<!-- inject-nav -->
 
 # ☕ Coffee Journal
 
