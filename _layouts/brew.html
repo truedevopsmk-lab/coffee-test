@@ -4,24 +4,38 @@
   <meta charset="utf-8">
   <title>{{ page.title }} | {{ site.title }}</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  {%- seo -%}
-  <link rel="stylesheet" href="{{ "/assets/main.css" | relative_url }}">
+  <link rel="stylesheet" href="{{ "/assets/coffee.css" | relative_url }}">
 </head>
 <body>
-  <main class="page-content">
-    <div class="wrapper">
-      <nav>
-        <a href="{{ "/" | relative_url }}">Home</a> →
-        <a href="{{ "/brews/" | relative_url }}">Brews</a> →
-        <span>{{ page.title }}</span>
+  <div class="site">
+
+    <aside class="sidebar">
+      <h1>Coffee Journal</h1>
+      <p>Brewing notes, beans, and experiments.</p>
+
+      <nav class="nav">
+        <a href="{{ "/" | relative_url }}">Home</a>
+        <a href="{{ "/brews/" | relative_url }}">Brews</a>
+        <a href="{{ "/beans/" | relative_url }}">Beans</a>
+        <a href="{{ "/methods/" | relative_url }}">Methods</a>
       </nav>
+    </aside>
+
+    <main class="content">
       <h1>{{ page.title }}</h1>
+
       {{ content }}
-      <div>
-        {% if page.previous %}← <a href="{{ page.previous.url | relative_url }}">{{ page.previous.title }}</a>{% endif %}
-        {% if page.next %}<a href="{{ page.next.url | relative_url }}">{{ page.next.title }}</a> →{% endif %}
+
+      <div class="brew-nav">
+        {% if page.previous %}
+          ← <a href="{{ page.previous.url | relative_url }}">{{ page.previous.title }}</a>
+        {% endif %}
+        {% if page.next %}
+          <a href="{{ page.next.url | relative_url }}">{{ page.next.title }}</a> →
+        {% endif %}
       </div>
-    </div>
-  </main>
+    </main>
+
+  </div>
 </body>
 </html>

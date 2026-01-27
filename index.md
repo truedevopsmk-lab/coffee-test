@@ -1,10 +1,12 @@
 ---
 layout: default
-title: Coffee Journal
+title: Home
 ---
 
-Welcome to my coffee journal.
+Welcome to my personal coffee brewing and tasting journal.
 
-- [Brews](/coffee-test/brews/)
-- [Beans](/coffee-test/beans/)
-- [Methods](/coffee-test/methods/)
+## Recent Brews
+
+- [AeroPress — ONA La Huerta](/coffee-test/brews/2026-01-27-ona-aeropress/)
+- [AeroPress — Miners Colombia](/coffee-test/brews/2026-01-23-miners-aeropress/)
+- [AeroPress — Kava Brazil](/coffee-test/brews/2026-01-18-kava-aeropress/)
