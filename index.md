@@ -1,16 +1,10 @@
-## 📘 Navigation Menu
-[🏠 Home](https://truedevopsmk-lab.github.io/coffee-test/) •
-
 ---
-<!-- inject-nav -->
+layout: default
+title: Coffee Journal
+---
 
-# ☕ Coffee Journal
+Welcome to my coffee journal.
 
-This repository is my personal coffee brewing and tasting journal.
-
-It complements my physical coffee journal and focuses on:
-- Brew recipes and experiments
-- Sensory observations (taste, finish, clarity, body)
-- Iterative improvements over time
-
-Everything here is practical, honest, and repeatable.
+- [Brews](/coffee-test/brews/)
+- [Beans](/coffee-test/beans/)
+- [Methods](/coffee-test/methods/)

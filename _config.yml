@@ -3,7 +3,6 @@ description: Personal coffee brewing & tasting journal
 markdown: kramdown
 permalink: pretty
 
-# IMPORTANT for project pages
 baseurl: /coffee-test
 url: https://truedevopsmk-lab.github.io
 

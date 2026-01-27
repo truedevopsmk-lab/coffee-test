@@ -3,8 +3,6 @@ layout: default
 title: Brews
 ---
 
-## Brew Journal
-
 <ul>
 {% assign brews = site.pages | where_exp: "p", "p.path contains 'brews/'" | where_exp: "p", "p.name != 'index.md'" | sort: "date" | reverse %}
 {% for brew in brews %}
