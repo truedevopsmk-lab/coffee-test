@@ -26,3 +26,4 @@
 <div id="output">
   <em>Select a method, recipe, and dose.</em>
 </div>
+<script src="{{ '/tools/brew-calculator/calculator.js' | relative_url }}"></script>
