@@ -1,19 +1,14 @@
----
-layout: default
-title: Brew Ratio Calculator
----
+## ☕ Brewing Method
 
-A simple calculator to help plan pour-over brews using well-known recipes.
+<div id="methods">
+  <button class="method active" data-method="v60">V60</button>
+  <button class="method" data-method="aeropress">AeroPress</button>
+</div>
 
----
-
-## ☕ Brew Recipe
+<br>
 
 <label for="recipe">Recipe</label><br>
-<select id="recipe">
-  <option value="tetsu">Tetsu Kasuya 4:6 (V60)</option>
-  <option value="hoffmann">Hoffmann V60</option>
-</select>
+<select id="recipe"></select>
 
 <br><br>
 
@@ -29,7 +24,5 @@ A simple calculator to help plan pour-over brews using well-known recipes.
 ## 📊 Brew Parameters
 
 <div id="output">
-  <em>Enter your dose and click calculate.</em>
+  <em>Select a method, recipe, and dose.</em>
 </div>
-
-<script src="{{ '/tools/brew-calculator/calculator.js' | relative_url }}"></script>
