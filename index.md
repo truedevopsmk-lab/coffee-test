@@ -61,14 +61,3 @@ This space documents my brews, beans, and experiments over time.
   </li>
 {% endfor %}
 </ul>
-<script>
-  window.beans = [
-    {% assign beans = site.pages | where_exp:"p","p.path contains 'beans/'" | where_exp:"p","p.name != 'index.md'" %}
-    {% for bean in beans %}
-      {
-        title: "{{ bean.title }}",
-        url: "{{ bean.url | relative_url }}"
-      }{% unless forloop.last %},{% endunless %}
-    {% endfor %}
-  ];
-</script>
