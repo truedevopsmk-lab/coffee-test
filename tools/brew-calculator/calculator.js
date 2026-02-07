@@ -167,3 +167,55 @@ if (recipe === "moka-classic") {
   };
 
 });
+function openBrewLogBuilder() {
+  document.getElementById("brew-log-builder").style.display = "block";
+
+  const select = document.getElementById("bean-select");
+  select.innerHTML = "";
+
+  window.beans.forEach(bean => {
+    const opt = document.createElement("option");
+    opt.value = bean.title;
+    opt.textContent = bean.title;
+    select.appendChild(opt);
+  });
+}
+
+function generateBrewMarkdown() {
+  const bean = document.getElementById("bean-select").value;
+  const strength = document.getElementById("strength").value;
+  const acidity = document.getElementById("acidity").value;
+  const sweetness = document.getElementById("sweetness").value;
+  const notes = document.getElementById("notes").value;
+
+  const today = new Date().toISOString().split("T")[0];
+
+  const markdown = `
+---
+layout: brew
+title: ${currentRecipeName()}
+date: ${today}
+bean: ${bean}
+---
+
+## Brew Parameters
+${document.getElementById("output").innerText}
+
+## Tasting
+- Strength: ${strength}
+- Acidity: ${acidity}
+- Sweetness: ${sweetness}
+
+## Notes
+${notes}
+`.trim();
+
+  const pre = document.getElementById("brew-markdown-output");
+  pre.style.display = "block";
+  pre.textContent = markdown;
+}
+
+function currentRecipeName() {
+  const recipeSelect = document.getElementById("recipe");
+  return recipeSelect.options[recipeSelect.selectedIndex].text;
+}
