@@ -25,6 +25,9 @@
 ## 📊 Brew Parameters
 
 <div id="output">
+  <em>Select a method, recipe, and dose.</em>
+</div>
+
 <div id="brew-log-actions" style="display:none; margin-top:1rem;">
   <button onclick="openBrewLogBuilder()">Create Brew Log</button>
 </div>
@@ -52,12 +55,11 @@
 
 <pre id="brew-markdown-output" style="display:none; margin-top:1.5rem;"></pre>
 
-  <em>Select a method, recipe, and dose.</em>
-</div>
-<script src="{{ '/tools/brew-calculator/calculator.js' | relative_url }}"></script>
 <script>
   window.beans = [
-    {% assign beans = site.pages | where_exp:"p","p.path contains 'beans/'" | where_exp:"p","p.name != 'index.md'" %}
+    {% assign beans = site.pages
+      | where_exp:"p","p.path contains 'beans/'"
+      | where_exp:"p","p.name != 'index.md'" %}
     {% for bean in beans %}
       {
         title: "{{ bean.title }}",
@@ -66,3 +68,5 @@
     {% endfor %}
   ];
 </script>
+
+<script src="{{ '/tools/brew-calculator/calculator.js' | relative_url }}"></script>
