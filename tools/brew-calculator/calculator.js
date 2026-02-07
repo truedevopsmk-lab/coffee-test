@@ -235,6 +235,20 @@ ${notes}
     const pre = document.getElementById("brew-markdown-output");
     pre.style.display = "block";
     pre.textContent = markdown;
+    document.getElementById("copy-brew-log").style.display = "inline-block";
   };
 
 });
+window.copyBrewLog = function () {
+  const pre = document.getElementById("brew-markdown-output");
+  const button = document.getElementById("copy-brew-log");
+
+  navigator.clipboard.writeText(pre.textContent).then(() => {
+    const originalText = button.textContent;
+    button.textContent = "Copied ✓";
+
+    setTimeout(() => {
+      button.textContent = originalText;
+    }, 1500);
+  });
+};
