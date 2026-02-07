@@ -54,6 +54,13 @@
 </div>
 
 <pre id="brew-markdown-output" style="display:none; margin-top:1.5rem;"></pre>
+<button
+  id="copy-brew-log"
+  style="display:none; margin-top:0.75rem;"
+  onclick="copyBrewLog()">
+  Copy Brew Log
+</button>
+
 
 <script>
   window.beans = [
