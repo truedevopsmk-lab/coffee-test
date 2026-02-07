@@ -202,41 +202,71 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   window.generateBrewMarkdown = function () {
-    const bean = document.getElementById("bean-select").value;
-    const strength = document.getElementById("strength").value;
-    const acidity = document.getElementById("acidity").value;
-    const sweetness = document.getElementById("sweetness").value;
-    const notes = document.getElementById("notes").value;
+  const bean = document.getElementById("bean-select").value;
+  const strength = document.getElementById("strength").value;
+  const acidity = document.getElementById("acidity").value;
+  const sweetness = document.getElementById("sweetness").value;
+  const notes = document.getElementById("notes").value;
 
-    const today = new Date().toISOString().split("T")[0];
-    const recipeName =
-      recipeSelect.options[recipeSelect.selectedIndex].text;
+  const today = new Date().toISOString().split("T")[0];
+  const recipeName =
+    recipeSelect.options[recipeSelect.selectedIndex].text;
 
-    const markdown = `
+  // Extract brew parameters text cleanly
+  const brewParams = output.innerText
+    .split("\n")
+    .map(line => `- ${line}`)
+    .join("\n");
+
+  const markdown = `
 ---
 layout: brew
-title: ${recipeName}
+title: ${recipeName} — ${bean}
 date: ${today}
-bean: ${bean}
 ---
 
-## Brew Parameters
-${output.innerText}
+This entry documents my **${recipeName}** brew and tasting notes for **${bean}**.
 
-## Tasting
-- Strength: ${strength}
-- Acidity: ${acidity}
-- Sweetness: ${sweetness}
+---
 
-## Notes
+## 📦 Coffee Details
+- **Bean**: ${bean}
+
+---
+
+## ⚖️ Brew Recipe
+${brewParams}
+
+---
+
+## 🧰 Brewing Equipment
+- **Brewer**: ${recipeName}
+- **Grinder**:
+- **Scale**:
+- **Server / Cup**:
+
+---
+
+## 👅 Cup Profile & Notes
+- **Strength**: ${strength}
+- **Acidity**: ${acidity}
+- **Sweetness**: ${sweetness}
+
 ${notes}
+
+---
+
+## 📝 Journal Thoughts
+Overall impressions, adjustments, and reflections from this brew.
 `.trim();
 
-    const pre = document.getElementById("brew-markdown-output");
-    pre.style.display = "block";
-    pre.textContent = markdown;
-    document.getElementById("copy-brew-log").style.display = "inline-block";
-  };
+  const pre = document.getElementById("brew-markdown-output");
+  pre.style.display = "block";
+  pre.textContent = markdown;
+
+  document.getElementById("copy-brew-log").style.display = "inline-block";
+};
+;
 
 });
 window.copyBrewLog = function () {
