@@ -1,7 +1,9 @@
 ---
-
 layout: default
 title: Dark Room Natural — Chikmagalur, India
+origin: Chikmagalur, Karnataka, India
+variety: Catuai
+process: Anaerobic Natural
 ---
 
 ## Dark Room Natural — Chikmagalur, India (Anaerobic Natural)
