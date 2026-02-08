@@ -2,7 +2,7 @@
 
 layout: default
 title: Kava Coffee — Brazil Espirito Santo
-------------------------------------------
+---
 
 ## Kava Coffee — Brazil Espirito Santo (Competition Lot)
 

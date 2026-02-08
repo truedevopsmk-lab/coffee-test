@@ -2,7 +2,7 @@
 
 layout: default
 title: Subtext Gesha — La Pradera, Colombia
--------------------------------------------
+---
 
 ## Subtext Gesha — La Pradera, Nariño, Colombia (Washed CM)
 

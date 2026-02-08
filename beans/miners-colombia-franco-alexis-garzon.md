@@ -2,7 +2,7 @@
 
 layout: default
 title: Miners Prague — Colombia Franco Alexis Garzón
-----------------------------------------------------
+---
 
 ## Miners Prague — Colombia Franco Alexis Garzón (Washed)
 
