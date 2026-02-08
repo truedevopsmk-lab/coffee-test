@@ -3,6 +3,14 @@ layout: default
 title: Beans
 ---
 
+{% assign beans = site.pages
+  | where_exp: "p", "p.path contains 'beans/'"
+  | where_exp: "p", "p.name != 'index.md'"
+  | sort: "title" %}
+
+{% if beans.size == 0 %}
+  <em>No beans logged yet.</em>
+{% else %}
 <ul>
 {% for bean in beans %}
   {% if bean.title %}
@@ -19,4 +27,4 @@ title: Beans
   {% endif %}
 {% endfor %}
 </ul>
-
+{% endif %}
