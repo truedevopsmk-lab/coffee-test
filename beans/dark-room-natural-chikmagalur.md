@@ -2,7 +2,7 @@
 
 layout: default
 title: Dark Room Natural — Chikmagalur, India
----------------------------------------------
+---
 
 ## Dark Room Natural — Chikmagalur, India (Anaerobic Natural)
 
