@@ -35,7 +35,8 @@ This space documents my brews, beans, and experiments over time.
 <ul>
 {% assign beans = site.pages
   | where_exp: "p", "p.path contains 'beans/'"
-  | where_exp: "p", "p.name != 'index.md'" %}
+  | where_exp: "p", "p.name != 'index.md'"
+  | sort: "title" %}
 {% for bean in beans limit:5 %}
   <li>
     <a href="{{ bean.url | relative_url }}">{{ bean.title }}</a>

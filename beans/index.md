@@ -4,12 +4,19 @@ title: Beans
 ---
 
 <ul>
-{% assign beans = site.pages
-  | where_exp: "p", "p.path contains 'beans/'"
-  | where_exp: "p", "p.name != 'index.md'" %}
 {% for bean in beans %}
-  <li>
-    <a href="{{ bean.url | relative_url }}">{{ bean.title }}</a>
-  </li>
+  {% if bean.title %}
+    <li style="margin-bottom: 0.75rem;">
+      <a href="{{ bean.url | relative_url }}">
+        {{ bean.title }}
+      </a><br>
+      <small style="color:#666;">
+        {{ bean.variety | default: "Variety N/A" }} ·
+        {{ bean.process | default: "Process N/A" }} ·
+        {{ bean.origin | default: "Origin N/A" }}
+      </small>
+    </li>
+  {% endif %}
 {% endfor %}
 </ul>
+
