@@ -38,5 +38,6 @@ Subtext is known for exceptionally clean, high-clarity light roasts that emphasi
 * Pour-over brewers (V60, flat-bottom drippers like B75)
 * Lower agitation and slightly cooler brew temperatures to preserve florals and clarity
 
-**Personal notes:**
+### Personal Notes
+
 *(To be filled after brewing)*

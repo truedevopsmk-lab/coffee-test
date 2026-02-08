@@ -38,29 +38,72 @@
   <label>Bean</label><br>
   <select id="bean-select"></select><br><br>
 
-  <label>Strength</label><br>
-  <input type="text" id="strength" placeholder="e.g. Medium"><br><br>
+  <!-- Strength Slider -->
+  <label for="strength">
+    Strength: <strong><span id="strengthVal">3</span></strong>
+  </label><br>
+  <input
+    type="range"
+    id="strength"
+    min="1"
+    max="5"
+    step="1"
+    value="3"
+    oninput="strengthVal.textContent = this.value"
+  >
+  <small>1 = Tea-like · 3 = Balanced · 5 = Punchy</small>
+  <br><br>
 
-  <label>Acidity</label><br>
-  <input type="text" id="acidity" placeholder="e.g. Juicy, bright"><br><br>
+  <!-- Acidity Slider -->
+  <label for="acidity">
+    Acidity: <strong><span id="acidityVal">3</span></strong>
+  </label><br>
+  <input
+    type="range"
+    id="acidity"
+    min="1"
+    max="5"
+    step="1"
+    value="3"
+    oninput="acidityVal.textContent = this.value"
+  >
+  <small>1 = Soft · 3 = Clean · 5 = Bright</small>
+  <br><br>
 
-  <label>Sweetness</label><br>
-  <input type="text" id="sweetness" placeholder="e.g. High"><br><br>
+  <!-- Sweetness Slider -->
+  <label for="sweetness">
+    Sweetness: <strong><span id="sweetnessVal">3</span></strong>
+  </label><br>
+  <input
+    type="range"
+    id="sweetness"
+    min="1"
+    max="5"
+    step="1"
+    value="3"
+    oninput="sweetnessVal.textContent = this.value"
+  >
+  <small>1 = Dry · 3 = Balanced · 5 = Syrupy</small>
+  <br><br>
 
   <label>Notes</label><br>
-  <textarea id="notes" rows="4" placeholder="Your tasting notes..."></textarea><br><br>
+  <textarea
+    id="notes"
+    rows="4"
+    placeholder="Your tasting notes..."
+  ></textarea><br><br>
 
   <button onclick="generateBrewMarkdown()">Generate Brew Log</button>
 </div>
 
 <pre id="brew-markdown-output" style="display:none; margin-top:1.5rem;"></pre>
+
 <button
   id="copy-brew-log"
   style="display:none; margin-top:0.75rem;"
   onclick="copyBrewLog()">
   Copy Brew Log
 </button>
-
 
 <script>
   window.beans = [
