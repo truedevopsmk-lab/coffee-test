@@ -1,8 +1,8 @@
 ---
 
-## title: "Subtext Gesha — La Pradera, Colombia"
+## title: "Subtext Gesha - La Pradera, Colombia"
 
-## Subtext Gesha — La Pradera, Nariño, Colombia (Washed CM)
+## Subtext Gesha - La Pradera, Nariño, Colombia (Washed CM)
 
 **Roaster:** Subtext Coffee
 **Origin:** Nariño, Colombia
