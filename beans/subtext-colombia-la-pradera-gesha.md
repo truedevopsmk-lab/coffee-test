@@ -1,44 +1,38 @@
 ---
+
 layout: default
 title: Subtext Gesha — La Pradera, Colombia
----
+-------------------------------------------
 
 ## Subtext Gesha — La Pradera, Nariño, Colombia (Washed CM)
 
-**Roaster:** Subtext Coffee  
-**Origin:** Nariño, Colombia  
-**Estate / Farm:** La Pradera  
-**Producer:** Finca La Pradera  
-**Variety:** Gesha  
-**Process:** Washed CM  
-**Roast:** Light  
-**Altitude:** Not specified  
-**Roasted On:** 01-12-2025  
+**Roaster:** Subtext Coffee
+**Origin:** Nariño, Colombia
+**Estate / Farm:** La Pradera
+**Producer:** Finca La Pradera
+**Variety:** Gesha
+**Process:** Washed CM (Carbonic Maceration)
+**Roast:** Light
+**Altitude:** Not specified
+**Roasted On:** 01-12-2025
 
 ### Flavor Notes (Roaster)
-- Lychee
-- Mango
-- Floral
-- Juicy
-- Complex
-- Vibrant acidity
 
+* Lychee
+* Mango
+* Floral
+* Juicy
+* Complex
+* Vibrant acidity
 
 ### Extra Context
 
-Subtext is known for exceptionally clean, high-clarity light roasts that emphasize acidity, aromatics, and terroir expression. This Gesha from La Pradera reflects that philosophy clearly.
+Gesha is one of the most celebrated coffee varieties globally, prized for its intense aromatics, floral complexity, and refined acidity. In Colombia’s high-altitude Nariño region, Gesha lots tend to express **vivid clarity with structured acidity and tea-like body**.
 
-**Expected cup character:**
+This coffee uses a **Washed Carbonic Maceration** process — a controlled fermentation technique adapted from winemaking that enhances aromatic intensity while preserving cleanliness. Community conversations around similar Gesha CM lots often mention **jasmine-like florals, tropical fruit esters, and elegant brightness** without overwhelming funk.
 
-* Bright, elegant acidity
-* Tea-like, delicate body
-* High aromatics with white florals and tropical fruit esters
+Subtext is widely respected for ultra-clean, acidity-forward roasting, making this coffee especially suited for slow, low-agitation pour-over brews where aromatics can fully bloom.
 
-**Best suited for:**
-
-* Pour-over brewers (V60, flat-bottom drippers like B75)
-* Lower agitation and slightly cooler brew temperatures to preserve florals and clarity
-
-### Personal Notes
+### Brew History
 
 *(To be filled after brewing)*
