@@ -1,7 +1,11 @@
 ---
+
 layout: default
 title: ONA — La Huerta, Honduras
----
+origin: Honduras
+variety: Catimor
+process: Washed
+---------------
 
 ## ONA — La Huerta, Honduras (Washed)
 
