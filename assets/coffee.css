@@ -136,3 +136,21 @@ body {
     padding: 1rem;
   }
 }
+@media (max-width: 768px) {
+  /* Improve beans list readability */
+  .content ul {
+    padding-left: 1rem;
+  }
+
+  .content li {
+    margin-bottom: 1.25rem;
+    line-height: 1.4;
+  }
+
+  .content li small {
+    display: block;
+    margin-top: 0.25rem;
+    font-size: 0.85rem;
+    color: #666;
+  }
+}
