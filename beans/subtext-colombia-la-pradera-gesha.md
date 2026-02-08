@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: Subtext Gesha — La Pradera, Colombia
 ---
