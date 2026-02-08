@@ -112,3 +112,27 @@ body {
   color: #fff;
   border-color: #8b5a2b;
 }
+/* =========================
+   Mobile layout adjustments
+   ========================= */
+
+@media (max-width: 768px) {
+  /* Stack sidebar on top */
+  .site {
+    display: block;
+  }
+
+  /* Sidebar becomes header */
+  .sidebar {
+    width: 100%;
+    padding: 1rem;
+    border-right: none;
+    border-bottom: 1px solid #ddd;
+  }
+
+  /* Main content takes full width */
+  .content {
+    width: 100%;
+    padding: 1rem;
+  }
+}
