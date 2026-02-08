@@ -1,27 +1,28 @@
 ---
+layout: default
+title: Subtext Gesha — La Pradera, Colombia
+---
 
-## title: "Subtext Gesha - La Pradera, Colombia"
+## Subtext Gesha — La Pradera, Nariño, Colombia (Washed CM)
 
-## Subtext Gesha - La Pradera, Nariño, Colombia (Washed CM)
-
-**Roaster:** Subtext Coffee
-**Origin:** Nariño, Colombia
-**Estate / Farm:** La Pradera
-**Producer:** Finca La Pradera
-**Variety:** Gesha
-**Process:** Washed CM
-**Roast:** Light
-**Altitude:** Not specified
-**Roasted On:** 01-12-2025
+**Roaster:** Subtext Coffee  
+**Origin:** Nariño, Colombia  
+**Estate / Farm:** La Pradera  
+**Producer:** Finca La Pradera  
+**Variety:** Gesha  
+**Process:** Washed CM  
+**Roast:** Light  
+**Altitude:** Not specified  
+**Roasted On:** 01-12-2025  
 
 ### Flavor Notes (Roaster)
+- Lychee
+- Mango
+- Floral
+- Juicy
+- Complex
+- Vibrant acidity
 
-* Lychee
-* Mango
-* Floral
-* Juicy
-* Complex
-* Vibrant acidity
 
 ### Extra Context
 
