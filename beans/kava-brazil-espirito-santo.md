@@ -1,34 +1,33 @@
 ---
-
 layout: default
 title: Kava Coffee — Brazil Espirito Santo
+origin: Espirito Santo, Brazil
+variety: Not specified
+process: Pulped Natural
 ---
 
 ## Kava Coffee — Brazil Espirito Santo (Competition Lot)
 
-**Roaster:** Kava Coffee
-**Origin:** Espirito Santo, Brazil
-**Estate / Farm:** Not specified
-**Producer:** Not specified
-**Variety:** Not specified
-**Process:** Pulped Natural
-**Roast:** Medium / Filter
-**Altitude:** Not specified
-**Roasted On:** Not specified
+**Roaster:** Kava Coffee  
+**Origin:** Espirito Santo, Brazil  
+**Estate / Farm:** Not specified  
+**Producer:** Not specified  
+**Variety:** Not specified  
+**Process:** Pulped Natural  
+**Roast:** Medium / Filter  
+**Altitude:** Not specified  
+**Roasted On:** Not specified  
 
 ### Flavor Notes (Roaster)
-
-* Marble cake
-* Nougat
-* Honeydew
-* Vanilla
+- Marble cake  
+- Nougat  
+- Honeydew  
+- Vanilla  
 
 ### Extra Context
+Espírito Santo is an emerging specialty region in Brazil, increasingly recognized for higher-quality microlots. Competition lots from this region tend to emphasize sweetness, balance, and approachability rather than aggressive acidity.
 
-Espírito Santo is an emerging specialty region in Brazil, increasingly recognized for higher-quality microlots beyond Brazil’s traditional commodity reputation. Competition lots from this region are typically selected for **clarity, sweetness, and balance**, rather than extreme acidity.
-
-Community impressions of similar Brazilian competition lots emphasize **dessert-like sweetness, creamy mouthfeel, and low perceived acidity**, making them highly approachable for both filter and immersion brewing. This coffee is often described as comforting, smooth, and forgiving — ideal for daily brews with minimal dial-in stress.
+This coffee is typically appreciated for its dessert-like profile, creamy mouthfeel, and forgiving nature across a range of brew methods.
 
 ### Brew History
-
-* 2026-01-23 — AeroPress (Inverted): Sweet, cake-like body, smooth finish
+- 2026-01-23 — AeroPress (Inverted): Sweet, cake-like body, smooth finish
