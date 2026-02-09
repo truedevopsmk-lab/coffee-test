@@ -1,4 +1,4 @@
-```md
+
 ---
 layout: default
 title: Coffee Mechanics — Srilakshmi Estate, Chikmagalur
