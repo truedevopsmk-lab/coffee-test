@@ -1,4 +1,3 @@
-
 ---
 layout: default
 title: Ruckus — Agony in the Garden (Kerehaklu)

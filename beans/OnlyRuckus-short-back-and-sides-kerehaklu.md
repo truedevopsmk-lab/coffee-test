@@ -1,4 +1,3 @@
-
 ---
 layout: default
 title: Ruckus — All Killa No Filla (Kerehaklu)

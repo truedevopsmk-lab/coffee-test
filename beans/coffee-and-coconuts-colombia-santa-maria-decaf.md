@@ -1,4 +1,3 @@
-
 ---
 layout: default
 title: Coffee & Coconuts — Colombia Decaf Santa Maria
