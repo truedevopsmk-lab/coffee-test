@@ -91,3 +91,66 @@ body {
   justify-content: space-between;
   font-size: 0.9rem;
 }
+/* Method selector badges */
+#methods {
+  margin-bottom: 1rem;
+}
+
+.method {
+  border: 1px solid #c9b8a5;
+  background: #f7f3ef;
+  color: #4b2e2b;
+  padding: 0.4rem 0.9rem;
+  margin-right: 0.4rem;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.method.active {
+  background: #8b5a2b;
+  color: #fff;
+  border-color: #8b5a2b;
+}
+/* =========================
+   Mobile layout adjustments
+   ========================= */
+
+@media (max-width: 768px) {
+  /* Stack sidebar on top */
+  .site {
+    display: block;
+  }
+
+  /* Sidebar becomes header */
+  .sidebar {
+    width: 100%;
+    padding: 1rem;
+    border-right: none;
+    border-bottom: 1px solid #ddd;
+  }
+
+  /* Main content takes full width */
+  .content {
+    width: 100%;
+    padding: 1rem;
+  }
+}
+@media (max-width: 768px) {
+  /* Improve beans list readability */
+  .content ul {
+    padding-left: 1rem;
+  }
+
+  .content li {
+    margin-bottom: 1.25rem;
+    line-height: 1.4;
+  }
+
+  .content li small {
+    display: block;
+    margin-top: 0.25rem;
+    font-size: 0.85rem;
+    color: #666;
+  }
+}
