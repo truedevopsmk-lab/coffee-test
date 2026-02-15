@@ -1,10 +1,6 @@
 ## ☕ Brewing Method
 
-<div id="methods">
-  <button class="method active" data-method="v60">V60</button>
-  <button class="method" data-method="aeropress">AeroPress</button>
-  <button class="method" data-method="mokapot">Moka Pot</button>
-</div>
+<div id="methods" aria-label="Brewing methods"></div>
 
 <br>
 
@@ -18,18 +14,18 @@
 
 <br><br>
 
-<button onclick="calculate()">Calculate</button>
+<button type="button" onclick="calculate()">Calculate</button>
 
 ---
 
 ## 📊 Brew Parameters
 
-<div id="output">
+<div id="output" aria-live="polite">
   <em>Select a method, recipe, and dose.</em>
 </div>
 
 <div id="brew-log-actions" style="display:none; margin-top:1rem;">
-  <button onclick="openBrewLogBuilder()">Create Brew Log</button>
+  <button type="button" onclick="openBrewLogBuilder()">Create Brew Log</button>
 </div>
 
 <div id="brew-log-builder" style="display:none; margin-top:1.5rem;">
@@ -93,7 +89,7 @@
     placeholder="Your tasting notes..."
   ></textarea><br><br>
 
-  <button onclick="generateBrewMarkdown()">Generate Brew Log</button>
+  <button type="button" onclick="generateBrewMarkdown()">Generate Brew Log</button>
 </div>
 
 <pre id="brew-markdown-output" style="display:none; margin-top:1.5rem;"></pre>
