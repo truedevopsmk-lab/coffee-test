@@ -1,10 +1,6 @@
 ## ☕ Brewing Method
 
-<div id="methods">
-  <button class="method active" data-method="v60">V60</button>
-  <button class="method" data-method="aeropress">AeroPress</button>
-  <button class="method" data-method="mokapot">Moka Pot</button>
-</div>
+<div id="methods" aria-label="Brewing methods"></div>
 
 <br>
 
