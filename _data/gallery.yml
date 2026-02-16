@@ -1,0 +1,19 @@
+brewers:
+  - image: /assets/gallery/brewers/v60.jpg
+    caption: Morning V60 ritual
+  - image: /assets/gallery/brewers/aeropress.jpg
+    caption: Travel AeroPress setup
+
+beans:
+  - image: /assets/gallery/beans/subtext-gesha.jpg
+    caption: Subtext Gesha
+  - image: /assets/gallery/beans/dark-room.jpg
+    caption: Dark Room Natural
+
+brewed_elsewhere:
+  - image: /assets/gallery/travel/wroclaw.jpg
+    caption: Brewed in Wrocław
+
+experiments:
+  - image: /assets/gallery/experiments/cupping.jpg
+    caption: Weekend cupping session
