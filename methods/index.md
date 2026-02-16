@@ -5,11 +5,13 @@ title: Methods
 
 ## Brewing Methods
 
-- [AeroPress]({{ '/methods/aeropress/' | relative_url }})
-- [Moka Pot]({{ '/methods/moka-pot/' | relative_url }})
-- [V60]({{ '/methods/v60/' | relative_url }})
-- [French Press]({{ '/methods/french-press/' | relative_url }})
-- [Chemex]({{ '/methods/chemex/' | relative_url }})
-- [B75]({{ '/methods/b75/' | relative_url }})
-- [Espresso]({{ '/methods/espresso/' | relative_url }})
-- [Cold Brew]({{ '/methods/cold-brew/' | relative_url }})
+{% assign method_pages = site.pages
+  | where_exp: "p", "p.path contains 'methods/'"
+  | where_exp: "p", "p.name != 'index.md'"
+  | sort: "title" %}
+
+<ul>
+{% for method in method_pages %}
+  <li><a href="{{ method.url | relative_url }}">{{ method.title | split: ' — ' | first }}</a></li>
+{% endfor %}
+</ul>

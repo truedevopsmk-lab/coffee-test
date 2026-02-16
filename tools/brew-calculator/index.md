@@ -104,6 +104,13 @@ title: ☕ Brewing Method
   Copy Brew Log
 </button>
 
+<button
+  id="download-brew-log"
+  style="display:none; margin-top:0.75rem; margin-left:0.5rem;"
+  onclick="downloadBrewLog()">
+  Download Brew Log (.md)
+</button>
+
 <script>
   window.beans = [
     {% assign beans = site.pages

@@ -293,6 +293,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const brewLogActions = document.getElementById("brew-log-actions");
   const markdownOutput = document.getElementById("brew-markdown-output");
   const copyButton = document.getElementById("copy-brew-log");
+  const downloadButton = document.getElementById("download-brew-log");
 
   if (
     !methodsContainer ||
@@ -300,7 +301,8 @@ document.addEventListener("DOMContentLoaded", () => {
     !output ||
     !brewLogActions ||
     !markdownOutput ||
-    !copyButton
+    !copyButton ||
+    !downloadButton
   ) {
     return;
   }
@@ -313,6 +315,7 @@ document.addEventListener("DOMContentLoaded", () => {
     markdownOutput.style.display = "none";
     markdownOutput.textContent = "";
     copyButton.style.display = "none";
+    downloadButton.style.display = "none";
   }
 
   function renderMethodButtons() {
@@ -471,9 +474,47 @@ Overall impressions, adjustments, and reflections from this brew.
     markdownOutput.style.display = "block";
     markdownOutput.textContent = markdown;
     copyButton.style.display = "inline-block";
+    downloadButton.style.display = "inline-block";
   };
 });
 
+
+window.downloadBrewLog = function () {
+  const pre = document.getElementById("brew-markdown-output");
+  const markdown = pre.textContent.trim();
+
+  if (!markdown) {
+    return;
+  }
+
+  const firstLine = markdown
+    .split("\n")
+    .find((line) => line.startsWith("title:"));
+  const fileBase = firstLine
+    ? firstLine
+        .replace("title:", "")
+        .trim()
+        .toLowerCase()
+        .replace(/[^a-z0-9]+/g, "-")
+        .replace(/^-|-$/g, "")
+    : `brew-log-${new Date().toISOString().split("T")[0]}`;
+
+  const blob = new Blob([markdown + "\n"], {
+    type: "text/markdown;charset=utf-8"
+  });
+  const objectUrl = URL.createObjectURL(blob);
+  const link = document.createElement("a");
+
+  link.href = objectUrl;
+  link.download = `${fileBase || "brew-log"}.md`;
+  document.body.appendChild(link);
+  link.click();
+  link.remove();
+
+  setTimeout(() => {
+    URL.revokeObjectURL(objectUrl);
+  }, 0);
+};
 window.copyBrewLog = function () {
   const pre = document.getElementById("brew-markdown-output");
   const button = document.getElementById("copy-brew-log");
