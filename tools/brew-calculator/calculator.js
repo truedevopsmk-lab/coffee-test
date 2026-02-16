@@ -294,6 +294,10 @@ document.addEventListener("DOMContentLoaded", () => {
   const markdownOutput = document.getElementById("brew-markdown-output");
   const copyButton = document.getElementById("copy-brew-log");
   const downloadButton = document.getElementById("download-brew-log");
+  const brewerValue = document.getElementById("brewer-value");
+  const grinderSelect = document.getElementById("grinder-select");
+  const scaleSelect = document.getElementById("scale-select");
+  const serverSelect = document.getElementById("server-select");
 
   if (
     !methodsContainer ||
@@ -302,9 +306,18 @@ document.addEventListener("DOMContentLoaded", () => {
     !brewLogActions ||
     !markdownOutput ||
     !copyButton ||
-    !downloadButton
+    !downloadButton ||
+    !brewerValue ||
+    !grinderSelect ||
+    !scaleSelect ||
+    !serverSelect
   ) {
     return;
+  }
+
+  function getCurrentBrewerName() {
+    const selectedMethod = getMethodById(currentMethod);
+    return selectedMethod ? selectedMethod.name : "";
   }
 
   function getMethodById(methodId) {
@@ -338,6 +351,7 @@ document.addEventListener("DOMContentLoaded", () => {
         loadRecipes();
         output.innerHTML = "<em>Select a method, recipe, and dose.</em>";
         brewLogActions.style.display = "none";
+        brewerValue.value = getCurrentBrewerName();
         resetGeneratedLog();
       });
 
@@ -361,6 +375,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   renderMethodButtons();
   loadRecipes();
+  brewerValue.value = getCurrentBrewerName();
 
   window.calculate = function () {
     const selectedMethod = getMethodById(currentMethod);
@@ -413,6 +428,8 @@ document.addEventListener("DOMContentLoaded", () => {
       option.textContent = bean.title;
       beanSelect.appendChild(option);
     });
+
+    brewerValue.value = getCurrentBrewerName();
   };
 
   window.generateBrewMarkdown = function () {
@@ -421,6 +438,10 @@ document.addEventListener("DOMContentLoaded", () => {
     const acidity = document.getElementById("acidity").value;
     const sweetness = document.getElementById("sweetness").value;
     const notes = document.getElementById("notes").value;
+    const brewer = brewerValue.value || getCurrentBrewerName();
+    const grinder = grinderSelect.value;
+    const scale = scaleSelect.value;
+    const server = serverSelect.value;
 
     const today = new Date().toISOString().split("T")[0];
     const recipeName = recipeSelect.options[recipeSelect.selectedIndex].text;
@@ -450,11 +471,11 @@ ${brewParams}
 
 ---
 
-## 🧰 Brewing Equipment
-- **Brewer**: ${recipeName}
-- **Grinder**:
-- **Scale**:
-- **Server / Cup**:
+    ## 🧰 Brewing Equipment
+    - **Brewer**: ${brewer}
+    - **Grinder**: ${grinder}
+    - **Scale**: ${scale}
+    - **Server / Cup**: ${server}
 
 ---
 

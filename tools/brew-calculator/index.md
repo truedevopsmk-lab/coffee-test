@@ -37,6 +37,28 @@ title: ☕ Brewing Method
   <label>Bean</label><br>
   <select id="bean-select"></select><br><br>
 
+  <label for="brewer-value">Brewer</label><br>
+  <input id="brewer-value" type="text" readonly><br><br>
+
+  <label for="grinder-select">Grinder</label><br>
+  <select id="grinder-select">
+    <option>Timemore C3S Pro</option>
+    <option>Cafflano Klassic</option>
+  </select><br><br>
+
+  <label for="scale-select">Scale</label><br>
+  <select id="scale-select">
+    <option>InstaCuppa</option>
+    <option>Dr.Trust</option>
+  </select><br><br>
+
+  <label for="server-select">Server / Cup</label><br>
+  <select id="server-select">
+    <option>Timemore Coffee Server 600ml</option>
+    <option>Coffee Mug</option>
+    <option>Borosil Coffeemate Travel Mug</option>
+  </select><br><br>
+
   <!-- Strength Slider -->
   <label for="strength">
     Strength: <strong><span id="strengthVal">3</span></strong>
