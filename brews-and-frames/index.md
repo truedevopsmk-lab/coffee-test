@@ -4,8 +4,6 @@ title: "Brews & Frames"
 permalink: /brews-and-frames/
 ---
 
-# Brews & Frames
-
 A visual archive of my coffee rituals, brewers, beans, and moments.
 
 <section class="gallery-section" aria-labelledby="gallery-brewers">
