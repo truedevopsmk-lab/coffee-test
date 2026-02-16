@@ -298,6 +298,12 @@ document.addEventListener("DOMContentLoaded", () => {
   const grinderSelect = document.getElementById("grinder-select");
   const scaleSelect = document.getElementById("scale-select");
   const serverSelect = document.getElementById("server-select");
+  const strengthInput = document.getElementById("strength");
+  const acidityInput = document.getElementById("acidity");
+  const sweetnessInput = document.getElementById("sweetness");
+  const strengthValue = document.getElementById("strengthVal");
+  const acidityValue = document.getElementById("acidityVal");
+  const sweetnessValue = document.getElementById("sweetnessVal");
 
   if (
     !methodsContainer ||
@@ -310,7 +316,13 @@ document.addEventListener("DOMContentLoaded", () => {
     !brewerValue ||
     !grinderSelect ||
     !scaleSelect ||
-    !serverSelect
+    !serverSelect ||
+    !strengthInput ||
+    !acidityInput ||
+    !sweetnessInput ||
+    !strengthValue ||
+    !acidityValue ||
+    !sweetnessValue
   ) {
     return;
   }
@@ -373,9 +385,21 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+
+  function syncSliderLabels() {
+    strengthValue.textContent = strengthInput.value;
+    acidityValue.textContent = acidityInput.value;
+    sweetnessValue.textContent = sweetnessInput.value;
+  }
+
   renderMethodButtons();
   loadRecipes();
   brewerValue.value = getCurrentBrewerName();
+  syncSliderLabels();
+
+  strengthInput.addEventListener("input", syncSliderLabels);
+  acidityInput.addEventListener("input", syncSliderLabels);
+  sweetnessInput.addEventListener("input", syncSliderLabels);
 
   window.calculate = function () {
     const selectedMethod = getMethodById(currentMethod);
@@ -471,11 +495,11 @@ ${brewParams}
 
 ---
 
-    ## 🧰 Brewing Equipment
-    - **Brewer**: ${brewer}
-    - **Grinder**: ${grinder}
-    - **Scale**: ${scale}
-    - **Server / Cup**: ${server}
+## 🧰 Brewing Equipment
+- **Brewer**: ${brewer}
+- **Grinder**: ${grinder}
+- **Scale**: ${scale}
+- **Server / Cup**: ${server}
 
 ---
 

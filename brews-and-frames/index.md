@@ -6,91 +6,43 @@ permalink: /brews-and-frames/
 
 A visual archive of my coffee rituals, brewers, beans, and moments.
 
-<section class="gallery-section" aria-labelledby="gallery-brewers">
-  <h2 id="gallery-brewers">☕ Brewers</h2>
-  <div class="gallery-grid">
-    {% for item in site.data.gallery.brewers %}
-      <figure class="gallery-card">
-        <button class="gallery-trigger" type="button" data-gallery-image="{{ item.image | relative_url }}" data-gallery-caption="{{ item.caption | escape }}" aria-label="Open image: {{ item.caption }}">
-          <img src="{{ item.image | relative_url }}" alt="{{ item.caption }}" loading="lazy">
-        </button>
-        <figcaption>{{ item.caption }}</figcaption>
-      </figure>
-    {% endfor %}
-  </div>
-</section>
+{% assign gallery_files = site.static_files | where_exp: "f", "f.path contains '/assets/gallery/'" | sort: "path" %}
 
-<section class="gallery-section" aria-labelledby="gallery-beans">
-  <h2 id="gallery-beans">📦 Beans</h2>
-  <div class="gallery-grid">
-    {% for item in site.data.gallery.beans %}
-      <figure class="gallery-card">
-        <button class="gallery-trigger" type="button" data-gallery-image="{{ item.image | relative_url }}" data-gallery-caption="{{ item.caption | escape }}" aria-label="Open image: {{ item.caption }}">
-          <img src="{{ item.image | relative_url }}" alt="{{ item.caption }}" loading="lazy">
-        </button>
-        <figcaption>{{ item.caption }}</figcaption>
-      </figure>
-    {% endfor %}
-  </div>
-</section>
+{% for section in site.data.gallery.sections %}
+<section class="gallery-section" aria-labelledby="gallery-{{ section.key }}">
+  <h2 id="gallery-{{ section.key }}">{{ section.title }}</h2>
+  {% assign section_files = gallery_files | where_exp: "f", "f.path contains section.folder" %}
 
-<section class="gallery-section" aria-labelledby="gallery-brewed-elsewhere">
-  <h2 id="gallery-brewed-elsewhere">🌍 Brewed Elsewhere</h2>
-  <div class="gallery-grid">
-    {% for item in site.data.gallery.brewed_elsewhere %}
-      <figure class="gallery-card">
-        <button class="gallery-trigger" type="button" data-gallery-image="{{ item.image | relative_url }}" data-gallery-caption="{{ item.caption | escape }}" aria-label="Open image: {{ item.caption }}">
-          <img src="{{ item.image | relative_url }}" alt="{{ item.caption }}" loading="lazy">
-        </button>
-        <figcaption>{{ item.caption }}</figcaption>
-      </figure>
-    {% endfor %}
-  </div>
+  {% if section_files.size > 0 %}
+    <div class="gallery-grid">
+      {% for file in section_files %}
+        {% assign caption = site.data.gallery.captions[file.path] | default: "" %}
+        <figure class="gallery-card">
+          <button
+            class="gallery-trigger"
+            type="button"
+            data-gallery-image="{{ file.path | relative_url }}"
+            data-gallery-caption="{{ caption | escape }}"
+            aria-label="Open image{% if caption != '' %}: {{ caption }}{% endif %}">
+            <img src="{{ file.path | relative_url }}" alt="{{ caption }}" loading="lazy">
+          </button>
+          <figcaption>{{ caption }}</figcaption>
+        </figure>
+      {% endfor %}
+    </div>
+  {% else %}
+    <p class="gallery-empty">No photos yet in this category.</p>
+  {% endif %}
 </section>
-
-<section class="gallery-section" aria-labelledby="gallery-experiments">
-  <h2 id="gallery-experiments">🧪 Experiments</h2>
-  <div class="gallery-grid">
-    {% for item in site.data.gallery.experiments %}
-      <figure class="gallery-card">
-        <button class="gallery-trigger" type="button" data-gallery-image="{{ item.image | relative_url }}" data-gallery-caption="{{ item.caption | escape }}" aria-label="Open image: {{ item.caption }}">
-          <img src="{{ item.image | relative_url }}" alt="{{ item.caption }}" loading="lazy">
-        </button>
-        <figcaption>{{ item.caption }}</figcaption>
-      </figure>
-    {% endfor %}
-  </div>
-</section>
-
-<section class="gallery-section" aria-labelledby="gallery-events">
-  <h2 id="gallery-events">🥳 Events</h2>
-  <div class="gallery-grid">
-    {% for item in site.data.gallery.events %}
-      <figure class="gallery-card">
-        <button class="gallery-trigger" type="button" data-gallery-image="{{ item.image | relative_url }}" data-gallery-caption="{{ item.caption | escape }}" aria-label="Open image: {{ item.caption }}">
-          <img src="{{ item.image | relative_url }}" alt="{{ item.caption }}" loading="lazy">
-        </button>
-        <figcaption>{{ item.caption }}</figcaption>
-      </figure>
-    {% endfor %}
-  </div>
-</section>
+{% endfor %}
 
 <div id="gallery-lightbox" class="gallery-lightbox" hidden>
   <div class="gallery-lightbox-backdrop" data-gallery-close></div>
-  <div class="gallery-lightbox-dialog" role="dialog" aria-modal="true" aria-label="Image preview">
+  <div class="gallery-lightbox-dialog" role="dialog" aria-modal="true" aria-label="Image preview" tabindex="-1">
     <button type="button" class="gallery-lightbox-close" data-gallery-close aria-label="Close image preview">×</button>
     <img id="gallery-lightbox-image" src="" alt="" loading="eager">
     <p id="gallery-lightbox-caption"></p>
   </div>
 </div>
 
-<div id="gallery-lightbox" class="gallery-lightbox" hidden>
-  <div class="gallery-lightbox-backdrop" data-gallery-close></div>
-  <div class="gallery-lightbox-dialog" role="dialog" aria-modal="true" aria-label="Image preview">
-    <button type="button" class="gallery-lightbox-close" data-gallery-close aria-label="Close image preview">×</button>
-    <img id="gallery-lightbox-image" src="" alt="" loading="eager">
-    <p id="gallery-lightbox-caption"></p>
-  </div>
-</div>
 <script src="{{ '/assets/js/gallery.js' | relative_url }}"></script>

@@ -206,6 +206,18 @@ body {
   color: #6b5e57;
 }
 
+
+.gallery-trigger:focus-visible {
+  outline: 2px solid #8b5a2b;
+  outline-offset: 2px;
+}
+
+.gallery-empty {
+  margin: 0.25rem 0 0;
+  color: #6b5e57;
+  font-size: 0.92rem;
+}
+
 .gallery-lightbox {
   position: fixed;
   inset: 0;
