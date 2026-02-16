@@ -200,28 +200,28 @@ document.addEventListener("DOMContentLoaded", () => {
       ]
     },
     {
-      id: "kalita",
-      name: "Kalita Wave",
+      id: "b75",
+      name: "B75",
       recipes: [
         {
-          id: "kalita-wave",
-          name: "Kalita Wave (Pulse Pour)",
+          id: "b75-fast-flatbed",
+          name: "B75 (Fast Flat-bed)",
           render: (coffee) => {
-            const ratio = "1:16";
-            const total = Math.round(coffee * 16);
+            const ratio = "1:15.5";
+            const total = Math.round(coffee * 15.5);
 
             return `
-              <h3>Kalita Wave (Pulse Pour)</h3>
+              <h3>B75 (Fast Flat-bed)</h3>
               <ul>
                 <li>Coffee: ${coffee} g</li>
                 <li>Total water: ${total} g</li>
                 <li>Ratio: ${ratio}</li>
-                <li>Water temp: 92–94°C</li>
-                <li>Pour pattern: 5 equal pulses</li>
-                <li>Brew time: 3:00–3:30</li>
+                <li>Water temp: 90–94°C</li>
+                <li>Pour pattern: 4 pulses</li>
+                <li>Brew time: 2:00–2:45</li>
               </ul>
               <p><strong>Why this works:</strong><br>
-              Flat-bed geometry supports even extraction and a sweet profile.</p>
+              The B75 flat-bed geometry and fast flow favor high clarity with sweetness.</p>
             `;
           }
         }
