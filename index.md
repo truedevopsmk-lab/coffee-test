@@ -48,6 +48,11 @@ This space documents my brews, beans, and experiments over time.
   <a href="{{ '/beans/' | relative_url }}">View all beans →</a>
 </p>
 
+<p>
+  <a href="{{ '/brews-and-frames/' | relative_url }}">📸 Brews &amp; Frames</a><br>
+  <small>A visual archive of my coffee rituals, brewers, beans, and moments.</small>
+</p>
+
 ---
 
 ## ⚙️ Brewing Methods
