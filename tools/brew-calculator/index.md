@@ -1,4 +1,7 @@
-## ☕ Brewing Method
+---
+layout: default
+title: ☕ Brewing Method
+---
 
 <div id="methods" aria-label="Brewing methods"></div>
 
