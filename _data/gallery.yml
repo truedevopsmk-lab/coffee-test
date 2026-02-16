@@ -1,7 +1,7 @@
 brewers:
   - image: /assets/gallery/brewers/v60.jpg
     caption: Morning V60 ritual
-  - image: /assets/gallery/brewers/aeropress.jpg
+  - image: /assets/gallery/brewers/AeroPress.jpeg
     caption: Travel AeroPress setup
 
 beans:
@@ -11,9 +11,15 @@ beans:
     caption: Dark Room Natural
 
 brewed_elsewhere:
-  - image: /assets/gallery/travel/wroclaw.jpg
+  - image: /assets/gallery/travel/IMG_3170.jpeg
     caption: Brewed in Wrocław
 
 experiments:
   - image: /assets/gallery/experiments/cupping.jpg
     caption: Weekend cupping session
+
+events:
+  - image: /assets/gallery/events/iicf.webp
+    caption: IICF Festival 2026 Bangalore
+
+
