@@ -1,0 +1,21 @@
+sections:
+  - key: brewers
+    title: "☕ Brewers"
+    folder: "/assets/gallery/brewers/"
+  - key: beans
+    title: "📦 Beans"
+    folder: "/assets/gallery/beans/"
+  - key: brewed_elsewhere
+    title: "🌍 Brewed Elsewhere"
+    folder: "/assets/gallery/travel/"
+  - key: experiments
+    title: "🧪 Experiments"
+    folder: "/assets/gallery/experiments/"
+
+captions:
+  "/assets/gallery/brewers/v60.jpg": "Morning V60 ritual"
+  "/assets/gallery/brewers/aeropress.jpg": "Travel AeroPress setup"
+  "/assets/gallery/beans/subtext-gesha.jpg": "Subtext Gesha"
+  "/assets/gallery/beans/dark-room.jpg": "Dark Room Natural"
+  "/assets/gallery/travel/wroclaw.jpg": "Brewed in Wrocław"
+  "/assets/gallery/experiments/cupping.jpg": "Weekend cupping session"
