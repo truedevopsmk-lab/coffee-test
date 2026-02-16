@@ -62,6 +62,20 @@ A visual archive of my coffee rituals, brewers, beans, and moments.
   </div>
 </section>
 
+<section class="gallery-section" aria-labelledby="gallery-events">
+  <h2 id="gallery-events">🥳 Events</h2>
+  <div class="gallery-grid">
+    {% for item in site.data.gallery.events %}
+      <figure class="gallery-card">
+        <button class="gallery-trigger" type="button" data-gallery-image="{{ item.image | relative_url }}" data-gallery-caption="{{ item.caption | escape }}" aria-label="Open image: {{ item.caption }}">
+          <img src="{{ item.image | relative_url }}" alt="{{ item.caption }}" loading="lazy">
+        </button>
+        <figcaption>{{ item.caption }}</figcaption>
+      </figure>
+    {% endfor %}
+  </div>
+</section>
+
 <div id="gallery-lightbox" class="gallery-lightbox" hidden>
   <div class="gallery-lightbox-backdrop" data-gallery-close></div>
   <div class="gallery-lightbox-dialog" role="dialog" aria-modal="true" aria-label="Image preview">
@@ -71,4 +85,12 @@ A visual archive of my coffee rituals, brewers, beans, and moments.
   </div>
 </div>
 
+<div id="gallery-lightbox" class="gallery-lightbox" hidden>
+  <div class="gallery-lightbox-backdrop" data-gallery-close></div>
+  <div class="gallery-lightbox-dialog" role="dialog" aria-modal="true" aria-label="Image preview">
+    <button type="button" class="gallery-lightbox-close" data-gallery-close aria-label="Close image preview">×</button>
+    <img id="gallery-lightbox-image" src="" alt="" loading="eager">
+    <p id="gallery-lightbox-caption"></p>
+  </div>
+</div>
 <script src="{{ '/assets/js/gallery.js' | relative_url }}"></script>
