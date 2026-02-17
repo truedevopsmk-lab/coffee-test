@@ -31,7 +31,7 @@ The coffee is processed using a **honey sundried method**, indicating partial mu
 
 ### Brew History
 
-- 2026-01-28 — V60 (4:6 Method): Juicy mosambi acidity, pineapple sweetness, clean black-tea finish
+- 2026-02-17 — V60 (4:6 Method): Tad bit of acidity, Wine like, plum sweetness, clean oolong-tea finish
 
 ### Personal Notes
 
