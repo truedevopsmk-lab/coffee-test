@@ -6,7 +6,7 @@ variety: SL 9/15
 process: Honey Sundried
 ---
 
-## Hill Groove — Lithanro Partner Farms (Honey Sundried) - Wokha - Nagaland
+## Hill Groove (Honey Sundried) - Wokha, Nagaland
 
 **Roaster:** Hill Groove Coffee Roasters  
 **Origin:** Wokha, Nagaland, India  
