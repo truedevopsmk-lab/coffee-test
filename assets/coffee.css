@@ -94,6 +94,9 @@ body {
 /* Method selector badges */
 #methods {
   margin-bottom: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
 }
 
 .method {
@@ -101,7 +104,6 @@ body {
   background: #f7f3ef;
   color: #4b2e2b;
   padding: 0.4rem 0.9rem;
-  margin-right: 0.4rem;
   border-radius: 20px;
   cursor: pointer;
   font-size: 0.9rem;
@@ -153,4 +155,36 @@ body {
     font-size: 0.85rem;
     color: #666;
   }
+}
+
+/* Homepage search */
+#site-search-input {
+  width: min(100%, 520px);
+  padding: 0.5rem 0.65rem;
+  border: 1px solid #c9b8a5;
+  border-radius: 8px;
+  font-size: 0.95rem;
+}
+
+#site-search-status {
+  margin: 0.65rem 0 0.5rem;
+  color: #6b5e57;
+  font-size: 0.9rem;
+}
+
+.search-results {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 0.5rem;
+}
+
+.search-results li {
+  padding: 0.65rem 0;
+  border-bottom: 1px solid #eee;
+}
+
+.search-results .search-snippet {
+  margin: 0.15rem 0 0;
+  color: #6b5e57;
+  font-size: 0.9rem;
 }
