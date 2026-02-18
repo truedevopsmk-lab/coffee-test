@@ -561,7 +561,6 @@ window.downloadBrewLog = function () {
 
 window.copyBrewLog = function () {
   const pre = document.getElementById("brew-markdown-output");
-  const button = document.getElementById("copy-brew-log");
 
   navigator.clipboard.writeText(pre.textContent).then(
     () => {
