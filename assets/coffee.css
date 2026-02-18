@@ -221,6 +221,15 @@ body {
   object-fit: cover;
   border-radius: 10px;
   border: 1px solid #e5dbd2;
+  transform: scale(1);
+  transition: transform 220ms ease, box-shadow 220ms ease;
+  will-change: transform;
+}
+
+.gallery-trigger:hover img,
+.gallery-trigger:focus-visible img {
+  transform: scale(1.04);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18);
 }
 
 .gallery-card figcaption {
