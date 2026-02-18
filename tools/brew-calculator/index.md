@@ -37,6 +37,28 @@ title: ☕ Brewing Method
   <label>Bean</label><br>
   <select id="bean-select"></select><br><br>
 
+  <label for="brewer-value">Brewer</label><br>
+  <input id="brewer-value" type="text" readonly><br><br>
+
+  <label for="grinder-select">Grinder</label><br>
+  <select id="grinder-select">
+    <option>Timemore C3S Pro</option>
+    <option>Cafflano Klassic</option>
+  </select><br><br>
+
+  <label for="scale-select">Scale</label><br>
+  <select id="scale-select">
+    <option>InstaCuppa</option>
+    <option>Dr.Trust</option>
+  </select><br><br>
+
+  <label for="server-select">Server / Cup</label><br>
+  <select id="server-select">
+    <option>Timemore Coffee Server 600ml</option>
+    <option>Coffee Mug</option>
+    <option>Borosil Coffeemate Travel Mug</option>
+  </select><br><br>
+
   <!-- Strength Slider -->
   <label for="strength">
     Strength: <strong><span id="strengthVal">3</span></strong>
@@ -48,7 +70,6 @@ title: ☕ Brewing Method
     max="5"
     step="1"
     value="3"
-    oninput="strengthVal.textContent = this.value"
   >
   <small>1 = Tea-like · 3 = Balanced · 5 = Punchy</small>
   <br><br>
@@ -64,7 +85,6 @@ title: ☕ Brewing Method
     max="5"
     step="1"
     value="3"
-    oninput="acidityVal.textContent = this.value"
   >
   <small>1 = Soft · 3 = Clean · 5 = Bright</small>
   <br><br>
@@ -80,7 +100,6 @@ title: ☕ Brewing Method
     max="5"
     step="1"
     value="3"
-    oninput="sweetnessVal.textContent = this.value"
   >
   <small>1 = Dry · 3 = Balanced · 5 = Syrupy</small>
   <br><br>
@@ -102,6 +121,13 @@ title: ☕ Brewing Method
   style="display:none; margin-top:0.75rem;"
   onclick="copyBrewLog()">
   Copy Brew Log
+</button>
+
+<button
+  id="download-brew-log"
+  style="display:none; margin-top:0.75rem; margin-left:0.5rem;"
+  onclick="downloadBrewLog()">
+  Download Brew Log (.md)
 </button>
 
 <script>

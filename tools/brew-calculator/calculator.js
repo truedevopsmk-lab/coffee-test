@@ -384,6 +384,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
   renderMethodButtons();
   loadRecipes();
+  brewerValue.value = getCurrentBrewerName();
+  syncSliderLabels();
+
+  strengthInput.addEventListener("input", syncSliderLabels);
+  acidityInput.addEventListener("input", syncSliderLabels);
+  sweetnessInput.addEventListener("input", syncSliderLabels);
 
   window.calculate = function () {
     const selectedMethod = getMethodById(currentMethod);
@@ -436,6 +442,8 @@ document.addEventListener("DOMContentLoaded", () => {
       option.textContent = bean.title;
       beanSelect.appendChild(option);
     });
+
+    brewerValue.value = getCurrentBrewerName();
   };
 
   window.generateBrewMarkdown = function () {
@@ -474,10 +482,10 @@ ${brewParams}
 ---
 
 ## 🧰 Brewing Equipment
-- **Brewer**: ${recipeName}
-- **Grinder**:
-- **Scale**:
-- **Server / Cup**:
+- **Brewer**: ${brewer}
+- **Grinder**: ${grinder}
+- **Scale**: ${scale}
+- **Server / Cup**: ${server}
 
 ---
 
