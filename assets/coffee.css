@@ -189,3 +189,92 @@ body {
   font-size: 0.9rem;
 }
 
+
+/* Brews & Frames gallery layout */
+.gallery-section {
+  margin-top: 2rem;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 0.9rem;
+}
+
+.gallery-card {
+  margin: 0;
+}
+
+.gallery-trigger {
+  display: block;
+  width: 100%;
+  border: 0;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+}
+
+.gallery-trigger img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 1px solid #e5dbd2;
+}
+
+.gallery-card figcaption {
+  margin-top: 0.35rem;
+  font-size: 0.85rem;
+  color: #6b5e57;
+}
+
+/* Lightbox */
+.gallery-lightbox[hidden] {
+  display: none;
+}
+
+.gallery-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+}
+
+.gallery-lightbox-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+}
+
+.gallery-lightbox-dialog {
+  position: relative;
+  max-width: min(92vw, 1200px);
+  max-height: 90vh;
+  margin: 5vh auto;
+  background: #fff;
+  border-radius: 12px;
+  padding: 1rem;
+  overflow: auto;
+}
+
+.gallery-lightbox-dialog img {
+  width: 100%;
+  height: auto;
+  max-height: 74vh;
+  object-fit: contain;
+  display: block;
+}
+
+.gallery-lightbox-close {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  border: 1px solid #d8d8d8;
+  background: #fff;
+  border-radius: 999px;
+  width: 2rem;
+  height: 2rem;
+  cursor: pointer;
+  font-size: 1.1rem;
+  line-height: 1;
+}

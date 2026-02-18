@@ -200,28 +200,28 @@ document.addEventListener("DOMContentLoaded", () => {
       ]
     },
     {
-      id: "b75",
-      name: "B75",
+      id: "kalita",
+      name: "Kalita Wave",
       recipes: [
         {
-          id: "b75-fast-flatbed",
-          name: "B75 (Fast Flat-bed)",
+          id: "kalita-wave",
+          name: "Kalita Wave (Pulse Pour)",
           render: (coffee) => {
-            const ratio = "1:15.5";
-            const total = Math.round(coffee * 15.5);
+            const ratio = "1:16";
+            const total = Math.round(coffee * 16);
 
             return `
-              <h3>B75 (Fast Flat-bed)</h3>
+              <h3>Kalita Wave (Pulse Pour)</h3>
               <ul>
                 <li>Coffee: ${coffee} g</li>
                 <li>Total water: ${total} g</li>
                 <li>Ratio: ${ratio}</li>
-                <li>Water temp: 90–94°C</li>
-                <li>Pour pattern: 4 pulses</li>
-                <li>Brew time: 2:00–2:45</li>
+                <li>Water temp: 92–94°C</li>
+                <li>Pour pattern: 5 equal pulses</li>
+                <li>Brew time: 3:00–3:30</li>
               </ul>
               <p><strong>Why this works:</strong><br>
-              The B75 flat-bed geometry and fast flow favor high clarity with sweetness.</p>
+              Flat-bed geometry supports even extraction and a sweet profile.</p>
             `;
           }
         }
@@ -294,10 +294,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const markdownOutput = document.getElementById("brew-markdown-output");
   const copyButton = document.getElementById("copy-brew-log");
   const downloadButton = document.getElementById("download-brew-log");
-  const brewerValue = document.getElementById("brewer-value");
-  const grinderSelect = document.getElementById("grinder-select");
-  const scaleSelect = document.getElementById("scale-select");
-  const serverSelect = document.getElementById("server-select");
+
   const strengthInput = document.getElementById("strength");
   const acidityInput = document.getElementById("acidity");
   const sweetnessInput = document.getElementById("sweetness");
@@ -311,26 +308,25 @@ document.addEventListener("DOMContentLoaded", () => {
     !output ||
     !brewLogActions ||
     !markdownOutput ||
-    !copyButton ||
-    !downloadButton ||
-    !brewerValue ||
-    !grinderSelect ||
-    !scaleSelect ||
-    !serverSelect ||
-    !strengthInput ||
-    !acidityInput ||
-    !sweetnessInput ||
-    !strengthValue ||
-    !acidityValue ||
-    !sweetnessValue
+    !copyButton
   ) {
     return;
   }
 
-  function getCurrentBrewerName() {
-    const selectedMethod = getMethodById(currentMethod);
-    return selectedMethod ? selectedMethod.name : "";
+  function bindRangeValue(inputEl, valueEl) {
+    if (!inputEl || !valueEl) {
+      return;
+    }
+
+    valueEl.textContent = inputEl.value;
+    inputEl.addEventListener("input", () => {
+      valueEl.textContent = inputEl.value;
+    });
   }
+
+  bindRangeValue(strengthInput, strengthValue);
+  bindRangeValue(acidityInput, acidityValue);
+  bindRangeValue(sweetnessInput, sweetnessValue);
 
   function getMethodById(methodId) {
     return methods.find((method) => method.id === methodId);
@@ -340,7 +336,9 @@ document.addEventListener("DOMContentLoaded", () => {
     markdownOutput.style.display = "none";
     markdownOutput.textContent = "";
     copyButton.style.display = "none";
-    downloadButton.style.display = "none";
+    if (downloadButton) {
+      downloadButton.style.display = "none";
+    }
   }
 
   function renderMethodButtons() {
@@ -363,7 +361,6 @@ document.addEventListener("DOMContentLoaded", () => {
         loadRecipes();
         output.innerHTML = "<em>Select a method, recipe, and dose.</em>";
         brewLogActions.style.display = "none";
-        brewerValue.value = getCurrentBrewerName();
         resetGeneratedLog();
       });
 
@@ -383,13 +380,6 @@ document.addEventListener("DOMContentLoaded", () => {
       option.textContent = recipe.name;
       recipeSelect.appendChild(option);
     });
-  }
-
-
-  function syncSliderLabels() {
-    strengthValue.textContent = strengthInput.value;
-    acidityValue.textContent = acidityInput.value;
-    sweetnessValue.textContent = sweetnessInput.value;
   }
 
   renderMethodButtons();
@@ -462,10 +452,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const acidity = document.getElementById("acidity").value;
     const sweetness = document.getElementById("sweetness").value;
     const notes = document.getElementById("notes").value;
-    const brewer = brewerValue.value || getCurrentBrewerName();
-    const grinder = grinderSelect.value;
-    const scale = scaleSelect.value;
-    const server = serverSelect.value;
 
     const today = new Date().toISOString().split("T")[0];
     const recipeName = recipeSelect.options[recipeSelect.selectedIndex].text;
@@ -519,47 +505,12 @@ Overall impressions, adjustments, and reflections from this brew.
     markdownOutput.style.display = "block";
     markdownOutput.textContent = markdown;
     copyButton.style.display = "inline-block";
-    downloadButton.style.display = "inline-block";
+    if (downloadButton) {
+      downloadButton.style.display = "inline-block";
+    }
   };
 });
 
-
-window.downloadBrewLog = function () {
-  const pre = document.getElementById("brew-markdown-output");
-  const markdown = pre.textContent.trim();
-
-  if (!markdown) {
-    return;
-  }
-
-  const firstLine = markdown
-    .split("\n")
-    .find((line) => line.startsWith("title:"));
-  const fileBase = firstLine
-    ? firstLine
-        .replace("title:", "")
-        .trim()
-        .toLowerCase()
-        .replace(/[^a-z0-9]+/g, "-")
-        .replace(/^-|-$/g, "")
-    : `brew-log-${new Date().toISOString().split("T")[0]}`;
-
-  const blob = new Blob([markdown + "\n"], {
-    type: "text/markdown;charset=utf-8"
-  });
-  const objectUrl = URL.createObjectURL(blob);
-  const link = document.createElement("a");
-
-  link.href = objectUrl;
-  link.download = `${fileBase || "brew-log"}.md`;
-  document.body.appendChild(link);
-  link.click();
-  link.remove();
-
-  setTimeout(() => {
-    URL.revokeObjectURL(objectUrl);
-  }, 0);
-};
 window.copyBrewLog = function () {
   const pre = document.getElementById("brew-markdown-output");
   const button = document.getElementById("copy-brew-log");
@@ -581,4 +532,25 @@ window.copyBrewLog = function () {
       }, 1500);
     }
   );
+};
+
+
+window.downloadBrewLog = function () {
+  const pre = document.getElementById("brew-markdown-output");
+
+  if (!pre || !pre.textContent) {
+    return;
+  }
+
+  const blob = new Blob([pre.textContent], { type: "text/markdown;charset=utf-8" });
+  const url = URL.createObjectURL(blob);
+  const link = document.createElement("a");
+  const filenameDate = new Date().toISOString().split("T")[0];
+
+  link.href = url;
+  link.download = `brew-log-${filenameDate}.md`;
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+  URL.revokeObjectURL(url);
 };
