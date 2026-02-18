@@ -52,21 +52,19 @@ This space documents my brews, beans, and experiments over time.
 
 ## 🔎 Search the Journal
 
-<label for="site-search-input">Search keywords</label><br>
-<input
-  id="site-search-input"
-  type="search"
-  placeholder="e.g. gesha, aeropress, sweetness"
-  autocomplete="off"
->
-<p id="site-search-status" aria-live="polite">Type to search brews, beans, methods, and tools.</p>
-<ul id="site-search-results" class="search-results"></ul>
+<div class="home-search">
+  <label for="site-search-input">Search keywords</label><br>
+  <input id="site-search-input" type="search" placeholder="e.g. gesha, aeropress, sweetness" autocomplete="off" />
+  <p id="site-search-status" aria-live="polite">Type to search brews, beans, methods, and tools.</p>
+  <ul id="site-search-results" class="search-results"></ul>
+</div>
 
 <script>
   window.searchIndex = [
     {% assign searchable_pages = site.pages
       | where_exp: "p", "p.name != 'index.md'"
-      | where_exp: "p", "p.url != '/'" %}
+      | where_exp: "p", "p.url != '/'"
+      | where_exp: "p", "p.path contains 'brews/' or p.path contains 'beans/' or p.path contains 'methods/' or p.path contains 'tools/'" %}
     {% for p in searchable_pages %}
       {
         title: {{ p.title | jsonify }},

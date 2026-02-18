@@ -293,6 +293,14 @@ document.addEventListener("DOMContentLoaded", () => {
   const brewLogActions = document.getElementById("brew-log-actions");
   const markdownOutput = document.getElementById("brew-markdown-output");
   const copyButton = document.getElementById("copy-brew-log");
+  const downloadButton = document.getElementById("download-brew-log");
+
+  const strengthInput = document.getElementById("strength");
+  const acidityInput = document.getElementById("acidity");
+  const sweetnessInput = document.getElementById("sweetness");
+  const strengthValue = document.getElementById("strengthVal");
+  const acidityValue = document.getElementById("acidityVal");
+  const sweetnessValue = document.getElementById("sweetnessVal");
 
   if (
     !methodsContainer ||
@@ -305,6 +313,21 @@ document.addEventListener("DOMContentLoaded", () => {
     return;
   }
 
+  function bindRangeValue(inputEl, valueEl) {
+    if (!inputEl || !valueEl) {
+      return;
+    }
+
+    valueEl.textContent = inputEl.value;
+    inputEl.addEventListener("input", () => {
+      valueEl.textContent = inputEl.value;
+    });
+  }
+
+  bindRangeValue(strengthInput, strengthValue);
+  bindRangeValue(acidityInput, acidityValue);
+  bindRangeValue(sweetnessInput, sweetnessValue);
+
   function getMethodById(methodId) {
     return methods.find((method) => method.id === methodId);
   }
@@ -313,6 +336,9 @@ document.addEventListener("DOMContentLoaded", () => {
     markdownOutput.style.display = "none";
     markdownOutput.textContent = "";
     copyButton.style.display = "none";
+    if (downloadButton) {
+      downloadButton.style.display = "none";
+    }
   }
 
   function renderMethodButtons() {
@@ -479,6 +505,9 @@ Overall impressions, adjustments, and reflections from this brew.
     markdownOutput.style.display = "block";
     markdownOutput.textContent = markdown;
     copyButton.style.display = "inline-block";
+    if (downloadButton) {
+      downloadButton.style.display = "inline-block";
+    }
   };
 });
 
@@ -503,4 +532,25 @@ window.copyBrewLog = function () {
       }, 1500);
     }
   );
+};
+
+
+window.downloadBrewLog = function () {
+  const pre = document.getElementById("brew-markdown-output");
+
+  if (!pre || !pre.textContent) {
+    return;
+  }
+
+  const blob = new Blob([pre.textContent], { type: "text/markdown;charset=utf-8" });
+  const url = URL.createObjectURL(blob);
+  const link = document.createElement("a");
+  const filenameDate = new Date().toISOString().split("T")[0];
+
+  link.href = url;
+  link.download = `brew-log-${filenameDate}.md`;
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+  URL.revokeObjectURL(url);
 };

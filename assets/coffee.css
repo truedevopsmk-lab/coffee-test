@@ -188,3 +188,10 @@ body {
   color: #6b5e57;
   font-size: 0.9rem;
 }
+
+
+/* Keep images responsive in content and gallery pages */
+.content img {
+  max-width: 100%;
+  height: auto;
+}
