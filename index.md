@@ -61,10 +61,11 @@ This space documents my brews, beans, and experiments over time.
 
 <script>
   window.searchIndex = [
-    {% assign searchable_pages = site.pages
-      | where_exp: "p", "p.name != 'index.md'"
-      | where_exp: "p", "p.url != '/'"
-      | where_exp: "p", "p.path contains 'brews/' or p.path contains 'beans/' or p.path contains 'methods/' or p.path contains 'tools/'" %}
+    {% assign search_brews = site.pages | where_exp: "p", "p.path contains 'brews/'" | where_exp: "p", "p.name != 'index.md'" %}
+    {% assign search_beans = site.pages | where_exp: "p", "p.path contains 'beans/'" | where_exp: "p", "p.name != 'index.md'" %}
+    {% assign search_methods = site.pages | where_exp: "p", "p.path contains 'methods/'" | where_exp: "p", "p.name != 'index.md'" %}
+    {% assign search_tools = site.pages | where_exp: "p", "p.path contains 'tools/'" | where_exp: "p", "p.name != 'index.md'" %}
+    {% assign searchable_pages = search_brews | concat: search_beans | concat: search_methods | concat: search_tools %}
     {% for p in searchable_pages %}
       {
         title: {{ p.title | jsonify }},
