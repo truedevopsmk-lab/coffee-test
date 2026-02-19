@@ -94,6 +94,9 @@ body {
 /* Method selector badges */
 #methods {
   margin-bottom: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
 }
 
 .method {
@@ -101,7 +104,6 @@ body {
   background: #f7f3ef;
   color: #4b2e2b;
   padding: 0.4rem 0.9rem;
-  margin-right: 0.4rem;
   border-radius: 20px;
   cursor: pointer;
   font-size: 0.9rem;
@@ -153,4 +155,135 @@ body {
     font-size: 0.85rem;
     color: #666;
   }
+}
+
+/* Homepage search */
+#site-search-input {
+  width: min(100%, 520px);
+  padding: 0.5rem 0.65rem;
+  border: 1px solid #c9b8a5;
+  border-radius: 8px;
+  font-size: 0.95rem;
+}
+
+#site-search-status {
+  margin: 0.65rem 0 0.5rem;
+  color: #6b5e57;
+  font-size: 0.9rem;
+}
+
+.search-results {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 0.5rem;
+}
+
+.search-results li {
+  padding: 0.65rem 0;
+  border-bottom: 1px solid #eee;
+}
+
+.search-results .search-snippet {
+  margin: 0.15rem 0 0;
+  color: #6b5e57;
+  font-size: 0.9rem;
+}
+
+
+/* Brews & Frames gallery layout */
+.gallery-section {
+  margin-top: 2rem;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 0.9rem;
+}
+
+.gallery-card {
+  margin: 0;
+}
+
+.gallery-trigger {
+  display: block;
+  width: 100%;
+  border: 0;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+}
+
+.gallery-trigger img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 1px solid #e5dbd2;
+  transform: scale(1);
+  transition: transform 220ms ease, box-shadow 220ms ease;
+  will-change: transform;
+}
+
+.gallery-trigger:hover img,
+.gallery-trigger:focus-visible img {
+  transform: scale(1.04);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18);
+}
+
+.gallery-card figcaption {
+  margin-top: 0.35rem;
+  font-size: 0.85rem;
+  color: #6b5e57;
+}
+
+/* Lightbox */
+.gallery-lightbox[hidden] {
+  display: none;
+}
+
+.gallery-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+}
+
+.gallery-lightbox-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+}
+
+.gallery-lightbox-dialog {
+  position: relative;
+  max-width: min(92vw, 1200px);
+  max-height: 90vh;
+  margin: 5vh auto;
+  background: #fff;
+  border-radius: 12px;
+  padding: 1rem;
+  overflow: auto;
+}
+
+.gallery-lightbox-dialog img {
+  width: 100%;
+  height: auto;
+  max-height: 74vh;
+  object-fit: contain;
+  display: block;
+}
+
+.gallery-lightbox-close {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  border: 1px solid #d8d8d8;
+  background: #fff;
+  border-radius: 999px;
+  width: 2rem;
+  height: 2rem;
+  cursor: pointer;
+  font-size: 1.1rem;
+  line-height: 1;
 }
