@@ -70,7 +70,6 @@ title: ☕ Brewing Method
     max="5"
     step="1"
     value="3"
-    oninput="strengthVal.textContent = this.value"
   >
   <small>1 = Tea-like · 3 = Balanced · 5 = Punchy</small>
   <br><br>
@@ -86,7 +85,6 @@ title: ☕ Brewing Method
     max="5"
     step="1"
     value="3"
-    oninput="acidityVal.textContent = this.value"
   >
   <small>1 = Soft · 3 = Clean · 5 = Bright</small>
   <br><br>
@@ -102,7 +100,6 @@ title: ☕ Brewing Method
     max="5"
     step="1"
     value="3"
-    oninput="sweetnessVal.textContent = this.value"
   >
   <small>1 = Dry · 3 = Balanced · 5 = Syrupy</small>
   <br><br>
