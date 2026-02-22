@@ -1,10 +1,9 @@
-## ☕ Brewing Method
+---
+layout: default
+title: ☕ Brewing Method
+---
 
-<div id="methods">
-  <button class="method active" data-method="v60">V60</button>
-  <button class="method" data-method="aeropress">AeroPress</button>
-  <button class="method" data-method="mokapot">Moka Pot</button>
-</div>
+<div id="methods" aria-label="Brewing methods"></div>
 
 <br>
 
@@ -18,18 +17,18 @@
 
 <br><br>
 
-<button onclick="calculate()">Calculate</button>
+<button type="button" onclick="calculate()">Calculate</button>
 
 ---
 
 ## 📊 Brew Parameters
 
-<div id="output">
+<div id="output" aria-live="polite">
   <em>Select a method, recipe, and dose.</em>
 </div>
 
 <div id="brew-log-actions" style="display:none; margin-top:1rem;">
-  <button onclick="openBrewLogBuilder()">Create Brew Log</button>
+  <button type="button" onclick="openBrewLogBuilder()">Create Brew Log</button>
 </div>
 
 <div id="brew-log-builder" style="display:none; margin-top:1.5rem;">
@@ -37,6 +36,28 @@
 
   <label>Bean</label><br>
   <select id="bean-select"></select><br><br>
+
+  <label for="brewer-value">Brewer</label><br>
+  <input id="brewer-value" type="text" readonly><br><br>
+
+  <label for="grinder-select">Grinder</label><br>
+  <select id="grinder-select">
+    <option>Timemore C3S Pro</option>
+    <option>Cafflano Klassic</option>
+  </select><br><br>
+
+  <label for="scale-select">Scale</label><br>
+  <select id="scale-select">
+    <option>InstaCuppa</option>
+    <option>Dr.Trust</option>
+  </select><br><br>
+
+  <label for="server-select">Server / Cup</label><br>
+  <select id="server-select">
+    <option>Timemore Coffee Server 600ml</option>
+    <option>Coffee Mug</option>
+    <option>Borosil Coffeemate Travel Mug</option>
+  </select><br><br>
 
   <!-- Strength Slider -->
   <label for="strength">
@@ -93,7 +114,7 @@
     placeholder="Your tasting notes..."
   ></textarea><br><br>
 
-  <button onclick="generateBrewMarkdown()">Generate Brew Log</button>
+  <button type="button" onclick="generateBrewMarkdown()">Generate Brew Log</button>
 </div>
 
 <pre id="brew-markdown-output" style="display:none; margin-top:1.5rem;"></pre>
@@ -103,6 +124,13 @@
   style="display:none; margin-top:0.75rem;"
   onclick="copyBrewLog()">
   Copy Brew Log
+</button>
+
+<button
+  id="download-brew-log"
+  style="display:none; margin-top:0.75rem; margin-left:0.5rem;"
+  onclick="downloadBrewLog()">
+  Download Brew Log (.md)
 </button>
 
 <script>
