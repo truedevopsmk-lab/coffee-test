@@ -8,8 +8,7 @@ A visual archive of my coffee rituals, brewers, beans, and moments.
 
 {% assign gallery_files = site.static_files | where_exp: "f", "f.path contains '/assets/gallery/'" | sort: "path" %}
 
-{% capture configured_keys %}{% for section in site.data.gallery.sections %}|{{ section.key }}|{% endfor %}{% endcapture %}
-{% capture detected_folders %}{% for file in gallery_files %}{% assign folder_name = file.path | remove: '/assets/gallery/' | split: '/' | first %}{{ folder_name }}|{% endfor %}{% endcapture %}
+{% capture detected_folders %}{% for file in gallery_files %}{% assign folder_name = file.path | remove: '/assets/gallery/' | split: '/' | first | strip %}{{ folder_name }}|{% endfor %}{% endcapture %}
 {% assign detected_folder_list = detected_folders | split: '|' | uniq %}
 
 {% for section in site.data.gallery.sections %}
@@ -40,10 +39,18 @@ A visual archive of my coffee rituals, brewers, beans, and moments.
 </section>
 {% endfor %}
 
-{% for folder in detected_folder_list %}
+{% for detected_folder in detected_folder_list %}
+  {% assign folder = detected_folder | strip %}
   {% if folder != "" %}
-    {% capture folder_token %}|{{ folder }}|{% endcapture %}
-    {% unless configured_keys contains folder_token %}
+    {% assign is_configured = false %}
+    {% for section in site.data.gallery.sections %}
+      {% capture folder_token %}/{{ folder }}/{% endcapture %}
+      {% if section.folder contains folder_token %}
+        {% assign is_configured = true %}
+      {% endif %}
+    {% endfor %}
+
+    {% unless is_configured %}
       {% capture auto_folder_path %}/assets/gallery/{{ folder }}/{% endcapture %}
       {% assign auto_files = gallery_files | where_exp: "f", "f.path contains auto_folder_path" %}
       {% if auto_files.size > 0 %}

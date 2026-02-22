@@ -385,7 +385,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-
   function syncSliderLabels() {
     strengthValue.textContent = strengthInput.value;
     acidityValue.textContent = acidityInput.value;
@@ -523,7 +522,6 @@ Overall impressions, adjustments, and reflections from this brew.
   };
 });
 
-
 window.downloadBrewLog = function () {
   const pre = document.getElementById("brew-markdown-output");
   const markdown = pre.textContent.trim();
@@ -560,9 +558,9 @@ window.downloadBrewLog = function () {
     URL.revokeObjectURL(objectUrl);
   }, 0);
 };
+
 window.copyBrewLog = function () {
   const pre = document.getElementById("brew-markdown-output");
-  const button = document.getElementById("copy-brew-log");
 
   navigator.clipboard.writeText(pre.textContent).then(
     () => {
