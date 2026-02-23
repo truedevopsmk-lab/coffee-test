@@ -11,6 +11,9 @@ sections:
   - key: experiments
     title: "🧪 Experiments"
     folder: "/assets/gallery/experiments/"
+  - key: adventure
+    title: "🧭 Adventure"
+    folder: "/assets/gallery/adventure/"
 
 captions:
   # Crema Chronicles (support both space and hyphenated folder/file variants)

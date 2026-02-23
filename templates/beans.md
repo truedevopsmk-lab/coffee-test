@@ -1,8 +1,9 @@
 ---
+layout: default
 title: "Roaster — Coffee Name"
 ---
 
-## Roaster Coffee Name — Region, Country (Process)
+## Roaster — Coffee Name (Process)
 
 **Roaster:**  
 **Origin:**  
@@ -16,13 +17,18 @@ title: "Roaster — Coffee Name"
 
 ### Flavor Notes (Roaster)
 - 
+- 
+- 
 
 ### Extra Context
-- Roaster style / philosophy  
-- Expected cup character  
-- Suggested brew methods  
+- Why this coffee stood out
+- Producer or processing highlights
+- Best brew methods to start with
+
+### Brew History
+- YYYY-MM-DD — Method: quick cup summary
 
 ### Personal Notes
-- First impression  
-- Brewed using  
-- Adjustments next time
+- First impression:
+- Brewed using:
+- Adjustments next time:
